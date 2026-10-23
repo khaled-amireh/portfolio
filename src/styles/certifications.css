@@ -1,0 +1,62 @@
+.credentials-section {
+  position: relative;
+  overflow: clip;
+  padding-block: clamp(5rem, 9vw, 9rem);
+  background: linear-gradient(180deg, #07131b, #03090e 45%, #07131b);
+}
+.credentials-header > .eyebrow { color: #54d6cb; margin-bottom: 2rem; }
+.credentials-header h2 { font-size: clamp(3rem, 7vw, 7rem); font-weight: 500; letter-spacing: -.06em; line-height: 1.1; margin: 0; }
+.credentials-text-mask { display: block; overflow: hidden; padding-bottom: .06em; }
+.credentials-text-mask > span { display: block; }
+.credentials-text-mask:last-child { color: #92a9b1; }
+.credentials-header > p:last-child { max-width: 35rem; margin: 2rem 0 0 auto; color: #92a9b1; font-size: clamp(.9rem, 1.4vw, 1.1rem); line-height: 1.8; }
+.credentials-exhibition { margin-top: clamp(3.5rem, 7vw, 7rem); }
+.credential-exhibit { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: center; gap: clamp(2rem, 5vw, 6rem); padding-block: clamp(3rem, 5vw, 5rem); border-top: 1px solid #54d6cb27; }
+.credential-exhibit:last-child { border-bottom: 1px solid #54d6cb27; }
+.credential-exhibit-udemy-python { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.credential-exhibit-udemy-python .credential-image-wrap { grid-column: 2; grid-row: 1; }
+.credential-exhibit-udemy-python .credential-story { grid-column: 1; grid-row: 1; }
+.credential-image-wrap { min-width: 0; position: relative; padding: clamp(.55rem, 1.3vw, 1rem); background: linear-gradient(140deg, #102b36, #07131b); border: 1px solid #54d6cb2b; box-shadow: 0 26px 70px #0005; transition: border-color .3s, transform .35s; }
+.credential-image-wrap::before { content: ''; position: absolute; inset: -2rem; z-index: -1; background: radial-gradient(ellipse, #54d6cb15, transparent 70%); pointer-events: none; }
+.credential-image-wrap:hover { border-color: #54d6cb85; transform: translateY(-4px); }
+.credential-image-wrap > a { display: block; position: relative; }
+.credential-image-wrap img { display: block; width: 100%; height: auto; object-fit: contain; }
+.credential-image-expand { position: absolute; bottom: .7rem; right: .7rem; display: inline-flex; align-items: center; gap: .5rem; padding: .7rem .8rem; background: #07131bed; color: #c3f3e7; font-size: .65rem; opacity: 0; transition: opacity .2s; }
+.credential-image-wrap:hover .credential-image-expand, .credential-image-wrap:focus-within .credential-image-expand { opacity: 1; }
+.credential-image-corner { position: absolute; left: -1px; top: -1px; z-index: 1; width: 2rem; height: 2rem; border-left: 1px solid #54d6cb; border-top: 1px solid #54d6cb; pointer-events: none; }
+.credential-story { min-width: 0; }
+.credential-story-top { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #54d6cb27; padding-bottom: 1.2rem; color: #54d6cb; }
+.credential-story-top .eyebrow { font-size: .6rem; }
+.credential-issuer-mark { font-family: var(--font-mono); font-size: clamp(2rem, 3vw, 3.4rem); color: #54d6cb30; letter-spacing: -.08em; line-height: 1; }
+.credential-type { color: #54d6cb; font-size: .57rem; margin: 2rem 0 1rem; }
+.credential-story h3 { font-size: clamp(1.7rem, 2.9vw, 3.2rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.18; margin: 0; overflow-wrap: anywhere; }
+.credential-issuer { font-size: 1rem; color: #c3f3e7; margin: 1.1rem 0 0; }
+.credential-facts { margin: 2.4rem 0 0; border-top: 1px solid #54d6cb27; }
+.credential-facts > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #54d6cb1a; font-size: .78rem; line-height: 1.6; }
+.credential-facts dt { color: #92a9b1; }
+.credential-facts dd { color: #f0f7f7; margin: 0; overflow-wrap: anywhere; }
+.credential-action { display: inline-flex; align-items: center; gap: 2.2rem; min-height: 48px; margin-top: 2rem; border-bottom: 1px solid #54d6cb; font-size: .8rem; transition: color .25s; }
+.credential-action svg { transition: transform .25s; }
+.credential-action:hover { color: #54d6cb; }
+.credential-action:hover svg { transform: translate(3px, -3px); }
+.credentials-section a:focus-visible { outline: 2px solid #c3f3e7; outline-offset: 5px; }
+@media (max-width: 1023px) {
+  .credential-exhibit, .credential-exhibit-udemy-python { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; }
+  .credential-story h3 { font-size: clamp(1.6rem, 2.8vw, 2.5rem); }
+}
+@media (max-width: 767px) {
+  .credentials-header h2 { font-size: clamp(2.6rem, 12vw, 4rem); }
+  .credentials-header > p:last-child { margin-left: 0; }
+  .credential-exhibit, .credential-exhibit-udemy-python { display: flex; flex-direction: column; align-items: stretch; gap: 2rem; padding-block: 3rem; }
+  .credential-image-wrap { width: 100%; }
+  .credential-story h3 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .credential-facts > div { grid-template-columns: 6rem minmax(0, 1fr); gap: .8rem; }
+  .credential-image-expand { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .credential-image-wrap, .credential-image-expand, .credential-action, .credential-action svg { transition: none; }
+}
+html[data-reduced-motion=true] .credential-image-wrap,
+html[data-reduced-motion=true] .credential-image-expand,
+html[data-reduced-motion=true] .credential-action,
+html[data-reduced-motion=true] .credential-action svg { transition: none; }

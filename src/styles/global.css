@@ -1,0 +1,34 @@
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 6rem; }
+  body { margin: 0; min-width: 320px; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  a { color: inherit; text-decoration: none; }
+  button, input, textarea { font: inherit; }
+  button:disabled { cursor: not-allowed; }
+  svg { flex-shrink: 0; }
+  img, video { display: block; max-width: 100%; height: auto; }
+  ::selection { color: var(--color-background); background: var(--color-mint); }
+  :focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 6px; }
+  [id] { scroll-margin-top: 2rem; }
+}
+
+@layer components {
+  .container-shell { width: min(100%, var(--content-width)); margin-inline: auto; padding-inline: var(--spacing-gutter); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.625rem; line-height: 1.6; letter-spacing: 0.14em; text-transform: uppercase; }
+  .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: 1rem; background: var(--color-mint); color: var(--color-background); transform: translateY(-200%); }
+  .skip-link:focus { transform: translateY(0); }
+  .text-link { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 44px; transition: color 180ms; }
+  .text-link:hover { color: var(--color-mint); }
+  .outline-button { display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; min-height: 48px; padding: 0.875rem 1.25rem; border: 1px solid var(--border-subtle); background: transparent; font-size: 0.75rem; transition: background 200ms, border-color 200ms; }
+  .outline-button:hover { background: var(--color-surface); border-color: var(--color-teal); }
+}
+
+/* Lenis is the sole smooth-scroll owner. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+html[data-reduced-motion='true'] *,
+html[data-reduced-motion='true'] *::before,
+html[data-reduced-motion='true'] *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }

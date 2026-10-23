@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+@import './styles/fonts.css';
+@import './styles/tokens.css';
+@import './styles/global.css';
+@import './styles/shell.css';
+@import './styles/hero.css';
+@import './styles/about.css';
